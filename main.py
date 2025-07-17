@@ -7,12 +7,15 @@ import shutil
 
 def get_system_language():
     lang = locale.getdefaultlocale()[0]
-    if lang.startswith("ko"):
-        return "ko"
-    elif lang.startswith("ja"):
-        return "ja"
-    elif lang.startswith("zh"):
-        return "zh"
+    if lang:
+        if lang.startswith("ko"):
+            return "ko"
+        elif lang.startswith("ja"):
+            return "ja"
+        elif lang.startswith("zh"):
+            return "zh"
+        else:
+            return "en"
     else:
         return "en"
 
